@@ -1,0 +1,28 @@
+{
+  "clientes": [
+    {
+      "nombre": "Contreras",
+      "documento": "12912211212",
+      "numero": "3182837374",
+      "listaDeAmigos": ["joan", "carlos", "david"]
+    },
+    {
+      "nombre": "Contreras",
+      "documento": "12912211212",
+      "numero": "3182837374",
+      "listaDeAmigos": ["joan", "carlos", "david"]
+    },
+    {
+      "nombre": "Contreras",
+      "documento": "12912211212",
+      "numero": "3182837374",
+      "listaDeAmigos": ["joan", "carlos", "david"]
+    },
+    {
+      "nombre": "Contreras",
+      "documento": "12912211212",
+      "numero": "3182837374",
+      "listaDeAmigos": ["joan", "carlos", "david"]
+    }
+  ]
+}
