@@ -1,29 +1,24 @@
 package domain.person;
 
 import java.time.LocalDate;
-
-import infrastructure.models.person.common.MaritalStatusType;
-
+import domain.person.enumm.*;
 
 
 public abstract class Person {
-	
 	private String document;
 	private String name; 
 	private String lastName;
 	private LocalDate birth;
-	private MaritalStatusType estadoCivil;
 	private String password;
 	private String gmail;
 	
 	
-	public Person(String document, String name, String lastName, LocalDate birth, MaritalStatusType estadoCivil,
+	public Person(String document, String name, String lastName, LocalDate birth,
 			String password, String gmail) {
 		this.document = document;
 		this.name = name;
 		this.lastName = lastName;
 		this.birth = birth;
-		this.estadoCivil = estadoCivil;
 		this.password = password;
 		this.gmail = gmail;
 	}
@@ -67,16 +62,6 @@ public abstract class Person {
 
 	public void setBirth(LocalDate birth) {
 		this.birth = birth;
-	}
-
-
-	public MaritalStatusType getEstadoCivil() {
-		return estadoCivil;
-	}
-
-
-	public void setEstadoCivil(MaritalStatusType estadoCivil) {
-		this.estadoCivil = estadoCivil;
 	}
 
 

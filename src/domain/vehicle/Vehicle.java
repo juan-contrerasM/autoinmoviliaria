@@ -1,5 +1,7 @@
 package domain.vehicle;
 
+import domain.vehicle.enums.*;
+
 public abstract class Vehicle {
 	
 	private String trademark;
@@ -7,13 +9,19 @@ public abstract class Vehicle {
 	private int changes;
 	private int maximumSpeed;
 	private int cylinder;
+	private EstadoVehiculo estadoVehiculo; 
+	private TipoAbs tipoAbs;
+	private TipoCombustible tipoCombustible;
 	
-	public Vehicle(String trademark, String model, int changes, int maximumSpeed, int cylinder) {
+	public Vehicle(String trademark, String model, int changes, int maximumSpeed, int cylinder,EstadoVehiculo estadoVehiculo,TipoAbs tipoAbs, TipoCombustible tipocombustible) {
 		this.trademark = trademark;
 		this.model = model;
 		this.changes = changes;
 		this.maximumSpeed = maximumSpeed;
 		this.cylinder = cylinder;
+		this.estadoVehiculo=estadoVehiculo;
+		this.tipoAbs= tipoAbs;
+		this.tipoCombustible= tipocombustible;
 	}
 
 	public String getTrademark() {

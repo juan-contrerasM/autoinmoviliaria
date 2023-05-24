@@ -5,4 +5,5 @@ module automoviliaria {
 	
 	opens ui.start to javafx.graphics, javafx.fxml;
 	opens ui.views.login.controller;
+	opens ui.views.register.controller;
 }

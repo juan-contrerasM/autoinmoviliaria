@@ -2,20 +2,48 @@
 #pane{
 	
 	-fx-font-size:13px;
-	-fx-font-family:'Krub', sans-serif;
-	-fx-background: linear-gradient( aquamarine
-	,darkturquoise);	
+	-fx-font-family:times new roman;
+	-fx-background-image: url(../../../images/fondo.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	-fx-height: 450px;
 }
 
 	
 
 #txtContrasenia{
 	-fx-color:black;
-	-fx-background-color:gray;
+	
 }
 #pane2{
 	-fx-background-color:#00000025;
-	-fx-bacjgroundo-radius:15;
+	-fx-background-radius:15;
 }
+#txtContrasenia, #txtEmail,#comboTipoUsuario{
+	-fx-background-color:transparent;
+	-fx-border-color:#fff;
+	-fx-border-width:0px 0px 3px 0px;
+	-fx-padding:3px 3px 3px 25px;
+	-fx-text-inner-color:fff;
+	-fx-prompt-text-fill:#fff;
+}
+#txtSingup{
+	-fx-background-color:gray;
+}
+.button{
+	-fx-background-color:#fff;
+	-fx-cursor:hand;
+}
+.button:hover{
+	-fx-background-color:#888c90;
+}
+#lblOlvidoClave{
+	-fx-text-fill:fff;
+}
+#lblOlvidoClave:hover{
+	-fx-background-color:#888c90;
+	-fx-cursor:hand;
+}
+
 
 

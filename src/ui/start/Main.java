@@ -27,14 +27,10 @@ private Stage primaryStage;
 	primaryStage.setTitle("Login");
 	primaryStage.setScene(scene);
 	primaryStage.show();
-	//codigo para agregar css
-	String css= this.getClass().getResource("/ui/views/login/view/Login.css").toExternalForm();
-	scene.getStylesheets().add(css);
-	primaryStage.setScene(scene);
-	primaryStage.show();
+
 	
 	DataBase b= new DataBase();
-	b.readJssonToHashMap();
+	//b.readJson("employee.json");
 	
 	
 	//Persistencia.guardaRegistroLog(MensajesInformationConstants.LANZAR_APLICACION, 1, "Cargar Aplicacion");
@@ -48,7 +44,7 @@ private Stage primaryStage;
 	public void carcarVentanaRegistro() {
 		
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("view/ViewRegistro.fxml"));
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/register/view/ViewRegistro.fxml"));
 			Parent root= load.load();
 			Scene escena= new Scene(root);
 			Stage stage= new Stage();
@@ -56,6 +52,9 @@ private Stage primaryStage;
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
 			stage.showAndWait();
+		
+			
+
 			
 		} catch (IOException e) {
 			e.printStackTrace();

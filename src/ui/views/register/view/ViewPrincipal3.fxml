@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="panelPrincipal" prefHeight="465.0" prefWidth="500.0" stylesheets="@Registro.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.register.controller.ViewRegistroController">
+   <children>
+      <Label layoutX="56.0" layoutY="159.0" />
+      <Pane fx:id="panel2" layoutX="85.0" layoutY="30.0" prefHeight="406.0" prefWidth="344.0">
+         <children>
+            <DatePicker fx:id="dateBirthy" editable="false" layoutX="180.0" layoutY="189.0" prefHeight="29.0" prefWidth="150.0" promptText="brithy" />
+            <TextField fx:id="txtName" layoutX="11.0" layoutY="138.0" prefHeight="29.0" prefWidth="149.0" promptText="Name" />
+            <TextField fx:id="txtLastName" layoutX="180.0" layoutY="138.0" prefHeight="29.0" prefWidth="150.0" promptText="Last name" />
+            <TextField fx:id="txtDocument" layoutX="11.0" layoutY="191.0" prefHeight="29.0" prefWidth="149.0" promptText="document" />
+            <TextField fx:id="txtEmail" layoutX="11.0" layoutY="243.0" prefHeight="29.0" prefWidth="149.0" promptText="Email" />
+            <TextField fx:id="txtCell" layoutX="181.0" layoutY="243.0" prefHeight="29.0" prefWidth="149.0" promptText="cell phone number" />
+            <TextField fx:id="txtPassword" layoutX="11.0" layoutY="298.0" prefHeight="29.0" prefWidth="149.0" promptText="Password" />
+            <ComboBox fx:id="ComboUserType" layoutX="180.0" layoutY="289.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" promptText="User type" />
+            <Button fx:id="bthRegistrar" layoutX="81.0" layoutY="350.0" mnemonicParsing="false" onAction="#RegistrarUsuario" prefHeight="25.0" prefWidth="182.0" text="continuar">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font></Button>
+            <ImageView fitHeight="42.0" fitWidth="150.0" layoutX="89.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblText" alignment="TOP_LEFT" layoutX="11.0" layoutY="77.0" prefHeight="42.0" prefWidth="321.0" text="Create an account in metal cars to access the application" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

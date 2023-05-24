@@ -16,38 +16,50 @@ import ui.start.Main;
 
 public class ViewLoginController {
 	Main main= new Main();
-
-    @FXML
-    private Pane pane2;
-	@FXML
-	private ImageView imgLogo;
-	 @FXML
-	  private ComboBox<?> comboTipoUsuario;
-	   @FXML
-	    private Text txtSingup;
-	@FXML
-	private ImageView imgUsuario;
-
-	@FXML
-	private ImageView imgCandado;
-
-	@FXML
-	private TextField txtEmail;
-
-	@FXML
-	private Label lblOlvidoClave;
-
-	@FXML
-	private AnchorPane pane;
+	
 
 	
-	@FXML
-	private Button btnEntrar;
-    @FXML
-    private Button bthRegistrar;
 
-	@FXML
-	private TextField txtContrasenia;
+	    @FXML
+	    private Text txtSingup;
+
+	    @FXML
+	    private ImageView imgCandado;
+
+	    @FXML
+	    private ImageView imgPerson;
+
+	    @FXML
+	    private TextField txtEmail;
+
+
+	    @FXML
+	    private Button btnRegistrarse;
+
+	    @FXML
+	    private ImageView imgLogo;
+
+	    @FXML
+	    private Pane pane2;
+
+	 
+
+	    @FXML
+	    private ComboBox<?> comboTipoUsuario;
+
+	    @FXML
+	    private AnchorPane pane;
+
+	    @FXML
+	    private Label txtUserType;
+
+	    @FXML
+	    private TextField txtContrasenia;
+
+	    @FXML
+	    private Button btnEntrar;
+
+
 
 	@FXML
 	void recuperarClave(MouseEvent event) {
@@ -57,6 +69,7 @@ public class ViewLoginController {
 	@FXML
 	void registrarse(ActionEvent event) {
 		main.carcarVentanaRegistro();
+		
 		
 
 	}
