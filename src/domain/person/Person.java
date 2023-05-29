@@ -11,19 +11,33 @@ public abstract class Person {
 	private LocalDate birth;
 	private String password;
 	private String gmail;
+	private UserType userTyPe;
 	
 	
 	public Person(String document, String name, String lastName, LocalDate birth,
-			String password, String gmail) {
+			String password, String gmail,UserType userTyPe ) {
 		this.document = document;
 		this.name = name;
 		this.lastName = lastName;
 		this.birth = birth;
 		this.password = password;
 		this.gmail = gmail;
+		this.userTyPe= userTyPe;
 	}
 
 	
+
+	public UserType getUserTyPe() {
+		return userTyPe;
+	}
+
+
+
+	public void setUserTyPe(UserType userTyPe) {
+		this.userTyPe = userTyPe;
+	}
+
+
 
 	public String getDocument() {
 		return document;

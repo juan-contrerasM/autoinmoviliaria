@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane fx:id="pane" prefHeight="612.0" prefWidth="498.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.login.controller.ViewLoginController">
+<AnchorPane fx:id="pane" prefHeight="612.0" prefWidth="498.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.principal.controller.ViewPrincipalController">
    <children>
       <Pane prefHeight="105.0" prefWidth="504.0">
          <children>

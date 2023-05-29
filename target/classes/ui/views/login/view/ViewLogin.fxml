@@ -14,7 +14,7 @@
    <children>
       <Pane fx:id="pane2" layoutX="116.0" layoutY="57.0" prefHeight="322.0" prefWidth="328.0">
          <children>
-            <TextField fx:id="txtEmail" cacheHint="QUALITY" depthTest="DISABLE" layoutX="63.0" layoutY="78.0" prefHeight="27.0" prefWidth="213.0" promptText="Username">
+            <TextField fx:id="txtDocument" cacheHint="QUALITY" depthTest="DISABLE" layoutX="63.0" layoutY="78.0" prefHeight="27.0" prefWidth="213.0" promptText="Document">
                <font>
                   <Font name="Times New Roman Bold" size="12.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Font name="Times New Roman Bold" size="12.0" />
                </font>
             </Button>
-            <ComboBox fx:id="comboTipoUsuario" layoutX="63.0" layoutY="189.0" prefHeight="25.0" prefWidth="213.0" promptText="User type" />
+            <ComboBox fx:id="comboUserType" layoutX="63.0" layoutY="189.0" prefHeight="25.0" prefWidth="213.0" promptText="User type" />
             <Label fx:id="lblOlvidoClave" layoutX="13.0" layoutY="284.0" onMousePressed="#recuperarClave" text="Olvidaste la contraseña?" textFill="#2c6eb5" underline="true">
                <font>
                   <Font name="Times New Roman Bold" size="12.0" />

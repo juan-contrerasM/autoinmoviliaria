@@ -1,12 +1,13 @@
 package ui.views.register.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
+import domain.person.enumm.UserType;
 import infrastructure.models.person.emp.*;
+import infrastructure.models.principal.Automoviliaria;
 import infrastructure.database.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,10 +23,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-public class ViewRegistroController {
+public class ViewRegistroController implements Initializable {
 	DataBase b= new DataBase();
+	Automoviliaria a= new Automoviliaria();
 	 @FXML
-	    private ComboBox<?> ComboUserType;
+	    private ComboBox<UserType> ComboUserType;
 
 	    @FXML
 	    private DatePicker dateBirthy;
@@ -59,18 +61,19 @@ public class ViewRegistroController {
 
 	    @FXML
 	    private TextField txtPassword;
-	   
+	    
+	    private ObservableList<UserType> listUserType= FXCollections.observableArrayList();
 	
 
 
     
     @FXML
-	 void RegistrarUsuario(ActionEvent event) throws JsonProcessingException {
+	 void RegistrarUsuario(ActionEvent event) throws IOException {
 		 
     	registrarUsuario();
 	 }
     
-    public void registrarUsuario() throws JsonProcessingException {
+    public void registrarUsuario() throws IOException {
     	String documento= txtDocument.getText();
     	String nombre= txtName.getText();
     	String apellido=txtLastName.getText();
@@ -78,9 +81,22 @@ public class ViewRegistroController {
     	String telefono=txtCell.getText();
     	String email= txtEmail.getText();
     	String contrasenia=txtPassword.getText();
+    	UserType userType= (UserType) ComboUserType.getSelectionModel().getSelectedItem();
     	
-    	Emp  e= new Emp(documento,nombre,apellido,nacimiento,contrasenia,email);
-    	b.convertClassAndSaveJason(e);
- 			
+
+   
+    	a.guardarEmpleado(documento, nombre, apellido, nacimiento, email, contrasenia, telefono, userType);
+    	
+    	//b.convertClassAndSaveJason(e);		
 	}
+    public void cargarTipoUsuaurio() {
+    	listUserType.add(UserType.ADMINISTRADOR);
+    	listUserType.add(UserType.EMPLEADO);
+    	ComboUserType.setItems(listUserType);
+    }
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+		cargarTipoUsuaurio();
+    
+    }
 }

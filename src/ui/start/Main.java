@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ui.views.register.controller.ViewRegistroController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -52,10 +53,23 @@ private Stage primaryStage;
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
 			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
-			
-
-			
+		
+	}
+	public void carcarVentanaPrincipal() {
+		
+		try {
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal3.fxml"));
+			Parent root= load.load();
+			Scene escena= new Scene(root);
+			Stage stage= new Stage();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana de resgistro");
+			stage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

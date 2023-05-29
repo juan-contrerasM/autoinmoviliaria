@@ -1,8 +1,20 @@
 package ui.views.login.controller;
 
 
+import java.awt.HeadlessException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
+import domain.person.enumm.UserType;
+import infrastructure.models.principal.Automoviliaria;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -13,11 +25,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import ui.start.Main;
+import ui.views.register.controller.ViewRegistroController;
 
-public class ViewLoginController {
+public class ViewLoginController implements Initializable{
 	Main main= new Main();
+	Automoviliaria automoviliaria= new Automoviliaria();
 	
-
+	
+	private ObservableList<UserType> listUserType= FXCollections.observableArrayList();
+		
 	
 
 	    @FXML
@@ -30,7 +46,7 @@ public class ViewLoginController {
 	    private ImageView imgPerson;
 
 	    @FXML
-	    private TextField txtEmail;
+	    private TextField txtDocument;
 
 
 	    @FXML
@@ -45,7 +61,7 @@ public class ViewLoginController {
 	 
 
 	    @FXML
-	    private ComboBox<?> comboTipoUsuario;
+	    private ComboBox<UserType> comboUserType;
 
 	    @FXML
 	    private AnchorPane pane;
@@ -68,16 +84,29 @@ public class ViewLoginController {
 
 	@FXML
 	void registrarse(ActionEvent event) {
+	
 		main.carcarVentanaRegistro();
-		
-		
-
 	}
 
 	@FXML
-	void entrar(ActionEvent event) {
-
+	void entrar(ActionEvent event) throws HeadlessException, IOException {
+		if(automoviliaria.verificadorEmpleado(txtDocument.getText(), comboUserType.getSelectionModel().getSelectedItem())) {
+			main.carcarVentanaPrincipal();
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Usuario no registrado","Registrase",JOptionPane.WARNING_MESSAGE);
+		}
 	}
+	 public void cargarTipoUsuaurio() {
+	    	listUserType.add(UserType.ADMINISTRADOR);
+	    	listUserType.add(UserType.EMPLEADO);
+	    	comboUserType.setItems(listUserType);
+	 }
+	    @Override
+	  public void initialize(URL arg0, ResourceBundle arg1) {
+			cargarTipoUsuaurio();
+	    
+	    }
 	 
 
 }
