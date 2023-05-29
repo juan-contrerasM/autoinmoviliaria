@@ -1,77 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pane" prefHeight="435.0" prefWidth="560.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.principal.controller.ViewPrincipalController">
+<AnchorPane prefHeight="800.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.propiedadRaiz.controller.PropiedadRaizControllerView">
    <children>
-      <Pane fx:id="pane2" layoutX="116.0" layoutY="57.0" prefHeight="322.0" prefWidth="328.0">
+      <Pane prefHeight="800.0" prefWidth="599.0">
          <children>
-            <TextField fx:id="txtEmail" cacheHint="QUALITY" depthTest="DISABLE" layoutX="63.0" layoutY="78.0" prefHeight="27.0" prefWidth="213.0" promptText="Username">
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txtContrasenia" depthTest="DISABLE" layoutX="63.0" layoutY="135.0" prefHeight="27.0" prefWidth="213.0" promptText="Password">
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </TextField>
-            <Button fx:id="btnRegistrarse" layoutX="227.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Registrarse">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </Button>
-            <Text fx:id="txtSingup" fill="WHITE" layoutX="119.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sing up" textAlignment="CENTER" wrappingWidth="79.0">
-               <font>
-                  <Font name="Times New Roman Bold" size="24.0" />
-               </font>
-            </Text>
-            <Button fx:id="btnEntrar" layoutX="124.0" layoutY="236.0" mnemonicParsing="false" onAction="#entrar" prefHeight="36.0" prefWidth="92.0" styleClass="b" text="Login Up">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Blend />
-               </effect>
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </Button>
-            <ComboBox fx:id="comboUserType" layoutX="63.0" layoutY="189.0" prefHeight="25.0" prefWidth="213.0" promptText="User type" />
-            <Label fx:id="lblOlvidoClave" layoutX="13.0" layoutY="284.0" onMousePressed="#recuperarClave" text="Olvidaste la contraseña?" textFill="#2c6eb5" underline="true">
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font></Label>
-            <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="98.0" layoutX="109.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/logo2.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgPerson" fitHeight="25.0" fitWidth="28.0" layoutX="63.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/59170.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgCandado" fitHeight="25.0" fitWidth="25.0" layoutX="63.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/logoPassword.png" />
-               </image>
-            </ImageView>
+            <Label fx:id="lblNameUser" layoutX="42.0" layoutY="53.0" />
+            <Pane fx:id="panelFondo" layoutX="-2.0" prefHeight="200.0" prefWidth="605.0">
+               <children>
+                  <ImageView fx:id="imgLogo" fitHeight="54.0" fitWidth="161.0" layoutX="399.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../automoviliaria/src/ui/images/logo.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnAddCar" layoutX="448.0" layoutY="120.0" mnemonicParsing="false" onAction="#AddCar" prefHeight="25.0" prefWidth="112.0" text="Add car" />
+                  <Text layoutX="44.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="56.98046875" />
+                  <Button fx:id="btnReport" layoutX="44.0" layoutY="120.0" mnemonicParsing="false" onAction="#Report" prefHeight="25.0" prefWidth="112.0" text="Report" />
+                  <Button fx:id="btnRegisterClient" layoutX="254.0" layoutY="120.0" mnemonicParsing="false" onAction="#RegisterCutomer" text="Register customer" />
+               </children>
+            </Pane>
+            <TextArea fx:id="txtDescription" layoutX="19.0" layoutY="213.0" prefHeight="102.0" prefWidth="566.0" text="The Ferrari, an iconic symbol of speed and elegance, is a masterpiece of automotive engineering.&#10; From its aerodynamic design to its powerful engine, every detail has been meticulously crafted to &#10;deliver an unparalleled driving experience. As you approach a Ferrari, its curvaceous bodywork and &#10;glossy paint instantly mesmerize you. Every line and angle is designed to cut through the wind and &#10;generate upward force, keeping the car glued to the tarmac even at dizzying speeds," />
          </children>
       </Pane>
    </children>
-
-
-   
 </AnchorPane>
