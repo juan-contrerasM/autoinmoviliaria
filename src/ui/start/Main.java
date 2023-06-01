@@ -1,6 +1,5 @@
 package ui.start;
 
-	
 import java.io.IOException;
 
 import infrastructure.database.*;
@@ -16,10 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-
 public class Main extends Application {
-private Stage primaryStage;
-	
+
+	private Stage primaryStage;
+	DataBase b = new DataBase();
+
 	@Override
 	public void start(Stage primaryStage) {
 	this.primaryStage = primaryStage;
@@ -40,12 +40,11 @@ private Stage primaryStage;
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-	}
-	
-	//cargar ventana registro
-	
+
+	// cargar ventana registro
+
 	public void carcarVentanaRegistro() {
-		
+
 		try {
 			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/register/view/ViewRegistro.fxml"));
 			Parent root= load.load();
@@ -59,11 +58,11 @@ private Stage primaryStage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
+
 	public void carcarVentanaPrincipal() {
-		
+
 		try {
 			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
 			Parent root= load.load();
@@ -77,8 +76,7 @@ private Stage primaryStage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 	
 	public void chargeWindowAddCar() {

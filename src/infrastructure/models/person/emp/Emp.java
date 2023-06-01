@@ -5,22 +5,16 @@ import domain.person.enumm.*;
 import domain.person.*;
 import domain.person.enumm.*;
 
-public class Emp extends Person{
-	
-	
+public class Emp extends Person {
+
 	private StateType stateType;
 	private UserType userType;
-	
-	public Emp() {
-		super("", "", "", null, "", "",null);
-		
-	}
 
-	public Emp(String document, String name, String lastName, LocalDate birth, String password, String gmail, UserType userTyPe) {
+	public Emp(String document, String name, String lastName, String birth, String password, String gmail,
+			UserType userTyPe) {
 		super(document, name, lastName, birth, password, gmail, userTyPe);
-		this.stateType =  stateType;
-		
-	}
+		this.stateType = stateType;
 
+	}
 
 }

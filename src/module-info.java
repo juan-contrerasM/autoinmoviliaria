@@ -5,6 +5,9 @@ module automoviliaria {
 	requires java.logging;
 	requires java.desktop;
 	
+	exports domain.person;
+	exports infrastructure.models.person.emp;
+	
 	opens ui.start to javafx.graphics, javafx.fxml;
 	opens ui.views.login.controller;
 	opens ui.views.register.controller;

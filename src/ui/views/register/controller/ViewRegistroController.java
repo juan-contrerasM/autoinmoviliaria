@@ -24,82 +24,79 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class ViewRegistroController implements Initializable {
-	DataBase b= new DataBase();
-	Automoviliaria a= new Automoviliaria();
-	Main main= new Main();
-	 @FXML
-	    private ComboBox<UserType> ComboUserType;
-
-	    @FXML
-	    private DatePicker dateBirthy;
-
-	    @FXML
-	    private AnchorPane panelPrincipal;
-
-	    @FXML
-	    private Button bthRegistrar;
-
-	    @FXML
-	    private TextField txtName;
-
-	    @FXML
-	    private Label lblText;
-
-	    @FXML
-	    private Pane panel2;
-
-	    @FXML
-	    private TextField txtEmail;
-	   
-	    @FXML
-	    private TextField txtCell;
-
-	    @FXML
-	    private TextField txtLastName;
-
-	    @FXML
-	    private TextField txtDocument;
-
-	    @FXML
-	    private TextField txtPassword;
-	    
-	    private ObservableList<UserType> listUserType= FXCollections.observableArrayList();
 	
+	DataBase b = new DataBase();
+	Automoviliaria a = new Automoviliaria();
+	Main main= new Main();
+	
+	@FXML
+	private ComboBox<UserType> ComboUserType;
 
+	@FXML
+	private DatePicker dateBirthy;
 
-    
-    @FXML
-	 void RegistrarUsuario(ActionEvent event) throws IOException {
-		 
-    	registrarUsuario();
-    	main.closeWimdow(bthRegistrar);
-    	main.carcarVentanaPrincipal();
-    	
-    	
-	 }
-    
-    
-    public void registrarUsuario() throws IOException {
-    	String documento= txtDocument.getText();
-    	String nombre= txtName.getText();
-    	String apellido=txtLastName.getText();
-    	LocalDate nacimiento= dateBirthy.getValue();
-    	String telefono=txtCell.getText();
-    	String email= txtEmail.getText();
-    	String contrasenia=txtPassword.getText();
-    	UserType userType= (UserType) ComboUserType.getSelectionModel().getSelectedItem();
-    	a.guardarEmpleado(documento, nombre, apellido, nacimiento, email, contrasenia, telefono, userType);
-    	
-    	//b.convertClassAndSaveJason(e);		
+	@FXML
+	private AnchorPane panelPrincipal;
+
+	@FXML
+	private Button bthRegistrar;
+
+	@FXML
+	private TextField txtName;
+
+	@FXML
+	private Label lblText;
+
+	@FXML
+	private Pane panel2;
+
+	@FXML
+	private TextField txtEmail;
+
+	@FXML
+	private TextField txtCell;
+
+	@FXML
+	private TextField txtLastName;
+
+	@FXML
+	private TextField txtDocument;
+
+	@FXML
+	private TextField txtPassword;
+
+	private ObservableList<UserType> listUserType = FXCollections.observableArrayList();
+
+	@FXML
+	void RegistrarUsuario(ActionEvent event) {
+		registrarUsuario();
+		main.closeWimdow(bthRegistrar);
+    main.carcarVentanaPrincipal();
 	}
-    public void cargarTipoUsuaurio() {
-    	listUserType.add(UserType.ADMINISTRADOR);
-    	listUserType.add(UserType.EMPLEADO);
-    	ComboUserType.setItems(listUserType);
-    }
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
+
+	public void registrarUsuario() {
+		String document = txtDocument.getText();
+		String name = txtName.getText();
+		String lastName = txtLastName.getText();
+		String birth = dateBirthy.getValue().toString();
+		String phone = txtCell.getText();
+		String email = txtEmail.getText();
+		String password = txtPassword.getText();
+		UserType userType = (UserType) ComboUserType.getSelectionModel().getSelectedItem();
+		
+		Emp employee = new Emp(document, name, lastName, birth, password, email, userType);
+		
+		b.convertClassAndSaveJson(employee, "resources/database/employee.json");
+	}
+
+	public void cargarTipoUsuaurio() {
+		listUserType.add(UserType.ADMINISTRADOR);
+		listUserType.add(UserType.EMPLEADO);
+		ComboUserType.setItems(listUserType);
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		cargarTipoUsuaurio();
-    
-    }
+	}
 }
