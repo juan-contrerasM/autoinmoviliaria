@@ -13,8 +13,6 @@ public class GlobalState {
 	private List<Emp> allEmployees = new ArrayList<Emp>();
 	private Person currentUser = null;
 
-	
-
 	// Constructor
 	// Here we will be creating private constructor
 	// restricted to this class itself

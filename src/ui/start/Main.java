@@ -38,10 +38,6 @@ public class Main extends Application {
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
-			DataBase b = new DataBase();
-			
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

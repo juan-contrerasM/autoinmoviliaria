@@ -1,5 +1,6 @@
 package ui.views.principal.controller;
 
+import domain.person.enumm.UserType;
 import infrastructure.state.GlobalState;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +14,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ViewPrincipalControllerView {
-	Main main = new Main();
+	
+	//Main main = new Main();
+	private Stage stage;
 	GlobalState globalState = GlobalState.getInstance();
 
 	@FXML
@@ -45,25 +48,40 @@ public class ViewPrincipalControllerView {
 		System.out.println("Actual usuario -> " + globalState.getCurrentUser().getName());
 		
 		//main.closeWimdow(btnReport);
-		main.chargeWindowReport();
+		//main.chargeWindowReport();
 	}
 
 	@FXML
 	void RegisterCutomer(ActionEvent event) {
 		//main.closeWimdow(btnReport);
-		main.chargeWindowRegisterCustomer();
+		//main.chargeWindowRegisterCustomer();
 	}
 
 	@FXML
 	void openWindowCatalogue(ActionEvent event) {
-	//	main.closeWimdow(btnReport);
-		main.chargeWindowCatalogue();
+		//main.closeWimdow(btnReport);
+		//main.chargeWindowCatalogue();
 	}
 
 	@FXML
 	void addCar(ActionEvent event) {
 		//main.closeWimdow(btnReport);
-		main.chargeWindowAddCar();
+		//main.chargeWindowAddCar();
+	}
+	
+	public void changeLabelButton(UserType nose) {
+		if(nose == UserType.EMPLEADO) {
+			btnRegisterClient.setText("Create client");
+			btnRegisterClient.setOnAction(e -> hola());
+			
+		}
+		if(nose == UserType.ADMINISTRADOR) {
+			btnRegisterClient.setText("Create employee");
+		}
+	}
+	
+	void hola() {
+		System.out.println("JOXPDFODF HIZO ESTOOO");
 	}
 
 }

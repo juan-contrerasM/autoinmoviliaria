@@ -24,9 +24,8 @@ public class FunctionsEmp {
 	}
 
 	public Emp checkLoginEmployee(String document, String password, List<Emp> listEmployee) {
-	
 		for (Emp empleado : listEmployee) {
-			System.out.println(empleado.getName() + "nos jodimos");
+			System.out.println(empleado.getName());
 		}
 		Emp employee = listEmployee.stream()
 				.filter(empl -> document.equals(empl.getDocument()) && password.equals(empl.getPassword())).findAny()

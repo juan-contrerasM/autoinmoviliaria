@@ -6,6 +6,7 @@ module automoviliaria {
 	requires java.desktop;
 	requires com.fasterxml.jackson.annotation;
 	requires java.compiler;
+	requires javafx.graphics;
 	
 
 	exports domain.person;
