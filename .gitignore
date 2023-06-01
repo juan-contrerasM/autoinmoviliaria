@@ -1,3 +1,5 @@
 /.metadata/
 target/
 RemoteSystemsTempFiles/
+.DS_Store
+.classpath

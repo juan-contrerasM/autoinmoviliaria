@@ -22,34 +22,32 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-	this.primaryStage = primaryStage;
-	try {
-	AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("/ui/views/login/view/ViewLogin.fxml"));
-	Scene scene = new Scene(root);
-	primaryStage.setResizable(false);
-	primaryStage.setTitle("Login");
-	primaryStage.setScene(scene);
-	primaryStage.show();
+		this.primaryStage = primaryStage;
+		try {
+			AnchorPane root = (AnchorPane) FXMLLoader
+					.load(getClass().getResource("/ui/views/login/view/ViewLogin.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setResizable(false);
+			primaryStage.setTitle("Login");
+			primaryStage.setScene(scene);
+			primaryStage.show();
 
-	
-	DataBase b= new DataBase();
-	//b.readJson("employee.json");
-	
-	
-	
-	} catch (Exception e) {
-		e.printStackTrace();
+			DataBase b = new DataBase();
+			// b.readJson("employee.json");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 	// cargar ventana registro
 
 	public void carcarVentanaRegistro() {
 
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/register/view/ViewRegistro.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
+			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/register/view/ViewRegistro.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
 			stage.setResizable(false);
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
@@ -64,10 +62,10 @@ public class Main extends Application {
 	public void carcarVentanaPrincipal() {
 
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
+			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
 			stage.setResizable(false);
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
@@ -78,13 +76,13 @@ public class Main extends Application {
 		}
 
 	}
-	
+
 	public void chargeWindowAddCar() {
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/addCar/view/ViewAddCar.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
+			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/addCar/view/ViewAddCar.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
 
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
@@ -93,15 +91,15 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
+
 	public void chargeWindowCatalogue() {
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/catalogue/view/ViewCatalogue.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
+			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/catalogue/view/ViewCatalogue.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
 
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
@@ -110,15 +108,16 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
+
 	public void chargeWindowReport() {
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/Report/view/ViewReport.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
-			
+			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/Report/view/ViewReport.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
+
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
@@ -126,15 +125,17 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
+
 	public void chargeWindowRegisterCustomer() {
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/registerCustomer/view/ViewRegisterCustomer.fxml"));
-			Parent root= load.load();
-			Scene escena= new Scene(root);
-			Stage stage= new Stage();
-			
+			FXMLLoader load = new FXMLLoader(
+					Main.class.getResource("/ui/views/registerCustomer/view/ViewRegisterCustomer.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
+
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
@@ -142,17 +143,14 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	
-		
+
 	}
+
 	public void closeWimdow(Button btn) {
-        Stage stage = (Stage) btn.getScene().getWindow();
-        stage.close();
-    }
-		
-	
-	
+		Stage stage = (Stage) btn.getScene().getWindow();
+		stage.close();
+	}
+
 	public static void main(String[] args) {
 		launch(args);
 	}
