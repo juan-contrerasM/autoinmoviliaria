@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="416.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.propiedadRaiz.controller.PropiedadRaizControllerView">
+<AnchorPane prefHeight="416.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" stylesheets="@AddCar.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.addCar.controller.ViewAddCarController">
    <children>
-      <Pane prefHeight="416.0" prefWidth="456.0">
+      <Pane fx:id="panelFondo" prefHeight="416.0" prefWidth="456.0" stylesheets="@../../../../../../../automoviliaria/src/ui/views/addCar/view/AddCar.css">
          <children>
             <Label fx:id="lblNameUser" layoutX="42.0" layoutY="53.0" />
             <ImageView fx:id="imgLogo" fitHeight="53.0" fitWidth="156.0" layoutX="278.0" pickOnBounds="true" preserveRatio="true">
@@ -26,9 +26,9 @@
             <TextField fx:id="txtNumclow" layoutX="59.0" layoutY="299.0" promptText="numClow" />
             <TextField fx:id="txtNumberAirbags" layoutX="59.0" layoutY="354.0" promptText="numberAirbags" />
             <TextField fx:id="txtCyilender" layoutX="239.0" layoutY="196.0" promptText="cylinder" />
-            <ComboBox fx:id="comboVehicleStatus" layoutX="239.0" layoutY="354.0" prefHeight="25.0" prefWidth="149.0" promptText="vehicle status" />
-            <ComboBox fx:id="comboTypeAbs" layoutX="239.0" layoutY="241.0" prefWidth="150.0" promptText="type of abs" />
-            <ComboBox fx:id="comboFuelType" layoutX="239.0" layoutY="299.0" prefWidth="150.0" promptText="fuel type" />
+            <ComboBox fx:id="comboVehicleStatus" layoutX="242.0" layoutY="344.0" prefHeight="38.0" prefWidth="174.0" promptText="vehicle status" />
+            <ComboBox fx:id="comboTypeAbs" layoutX="239.0" layoutY="231.0" prefHeight="38.0" prefWidth="174.0" promptText="type of abs" />
+            <ComboBox fx:id="comboFuelType" layoutX="239.0" layoutY="289.0" prefHeight="38.0" prefWidth="174.0" promptText="fuel type" />
             <Button fx:id="btnAddCar" layoutX="176.0" layoutY="62.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="92.0" text="add car" />
          </children>
       </Pane>

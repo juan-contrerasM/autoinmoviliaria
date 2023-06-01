@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-
+import ui.start.*;
 import domain.person.enumm.UserType;
 import infrastructure.models.person.emp.*;
 import infrastructure.models.principal.Automoviliaria;
@@ -26,6 +26,7 @@ import javafx.scene.layout.Pane;
 public class ViewRegistroController implements Initializable {
 	DataBase b= new DataBase();
 	Automoviliaria a= new Automoviliaria();
+	Main main= new Main();
 	 @FXML
 	    private ComboBox<UserType> ComboUserType;
 
@@ -71,7 +72,12 @@ public class ViewRegistroController implements Initializable {
 	 void RegistrarUsuario(ActionEvent event) throws IOException {
 		 
     	registrarUsuario();
+    	main.closeWimdow(bthRegistrar);
+    	main.carcarVentanaPrincipal();
+    	
+    	
 	 }
+    
     
     public void registrarUsuario() throws IOException {
     	String documento= txtDocument.getText();
@@ -82,9 +88,6 @@ public class ViewRegistroController implements Initializable {
     	String email= txtEmail.getText();
     	String contrasenia=txtPassword.getText();
     	UserType userType= (UserType) ComboUserType.getSelectionModel().getSelectedItem();
-    	
-
-   
     	a.guardarEmpleado(documento, nombre, apellido, nacimiento, email, contrasenia, telefono, userType);
     	
     	//b.convertClassAndSaveJason(e);		

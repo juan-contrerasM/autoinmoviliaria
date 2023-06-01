@@ -1,0 +1,8 @@
+#panelfondo{
+	-fx-font-size:13px;
+	-fx-font-family:times new roman;
+	-fx-background-image: url(../../../images/fondoCatalogue.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	-fx-height: 450px;
+}

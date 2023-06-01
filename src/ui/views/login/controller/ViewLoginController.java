@@ -5,7 +5,8 @@ import java.awt.HeadlessException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javafx.scene.Node;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 import domain.person.enumm.UserType;
@@ -34,7 +35,7 @@ public class ViewLoginController implements Initializable{
 	
 	private ObservableList<UserType> listUserType= FXCollections.observableArrayList();
 		
-	
+	 Stage stage = new Stage();
 
 	    @FXML
 	    private Text txtSingup;
@@ -84,19 +85,22 @@ public class ViewLoginController implements Initializable{
 
 	@FXML
 	void registrarse(ActionEvent event) {
-	
+		main.closeWimdow(btnEntrar);
 		main.carcarVentanaRegistro();
+		
 	}
 
 	@FXML
 	void entrar(ActionEvent event) throws HeadlessException, IOException {
-		if(automoviliaria.verificadorEmpleado(txtDocument.getText(), comboUserType.getSelectionModel().getSelectedItem())) {
+			main.closeWimdow(btnEntrar);
 			main.carcarVentanaPrincipal();
-		}
-		else {
-			JOptionPane.showMessageDialog(null, "Usuario no registrado","Registrase",JOptionPane.WARNING_MESSAGE);
-		}
+			
+			
+		
+		   
 	}
+		
+		
 	 public void cargarTipoUsuaurio() {
 	    	listUserType.add(UserType.ADMINISTRADOR);
 	    	listUserType.add(UserType.EMPLEADO);

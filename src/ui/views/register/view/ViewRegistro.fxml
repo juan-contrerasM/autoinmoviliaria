@@ -21,7 +21,7 @@
             <TextField fx:id="txtCell" layoutX="181.0" layoutY="243.0" prefHeight="29.0" prefWidth="149.0" promptText="cell phone number" />
             <TextField fx:id="txtPassword" layoutX="11.0" layoutY="298.0" prefHeight="29.0" prefWidth="149.0" promptText="Password" />
             <ComboBox fx:id="ComboUserType" layoutX="180.0" layoutY="289.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" promptText="User type" />
-            <Button fx:id="bthRegistrar" layoutX="81.0" layoutY="350.0" mnemonicParsing="false" onAction="#RegistrarUsuario" prefHeight="25.0" prefWidth="182.0" text="continuar">
+            <Button fx:id="bthRegistrar" layoutX="81.0" layoutY="350.0" mnemonicParsing="false" onAction="#RegistrarUsuario" prefHeight="25.0" prefWidth="182.0" text="continue">
                <font>
                   <Font name="Times New Roman Bold" size="18.0" />
                </font></Button>

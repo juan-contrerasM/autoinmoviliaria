@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="424.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.report.controller.ViewReportController">
+   <children>
+      <Pane fx:id="paneFondo" prefHeight="424.0" prefWidth="453.0" stylesheets="@Report.css">
+         <children>
+            <TextArea fx:id="txtAreaShowReport" layoutX="51.0" editable="false" layoutY="72.0" prefHeight="326.0" prefWidth="352.0" />
+            <ImageView fx:id="imgLogo" fitHeight="42.0" fitWidth="132.0" layoutX="307.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo2.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTitle" layoutX="203.0" layoutY="34.0" text="Report" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

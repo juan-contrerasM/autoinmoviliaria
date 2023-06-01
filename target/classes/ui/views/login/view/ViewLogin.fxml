@@ -24,7 +24,7 @@
                   <Font name="Times New Roman Bold" size="12.0" />
                </font>
             </TextField>
-            <Button fx:id="btnRegistrarse" layoutX="227.0" layoutY="272.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="25.0" prefWidth="79.0" text="Registrarse">
+            <Button fx:id="btnRegistrarse" layoutX="227.0" layoutY="272.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="25.0" prefWidth="79.0" text="sign in">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -49,7 +49,7 @@
                </font>
             </Button>
             <ComboBox fx:id="comboUserType" layoutX="63.0" layoutY="189.0" prefHeight="25.0" prefWidth="213.0" promptText="User type" />
-            <Label fx:id="lblOlvidoClave" layoutX="13.0" layoutY="284.0" onMousePressed="#recuperarClave" text="Olvidaste la contraseña?" textFill="#2c6eb5" underline="true">
+            <Label fx:id="lblOlvidoClave" layoutX="13.0" layoutY="284.0" onMousePressed="#recuperarClave" text="forgot the password?" textFill="#2c6eb5" underline="true">
                <font>
                   <Font name="Times New Roman Bold" size="12.0" />
                </font></Label>

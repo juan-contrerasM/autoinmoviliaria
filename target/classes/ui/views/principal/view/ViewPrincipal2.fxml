@@ -7,25 +7,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.propiedadRaiz.controller.PropiedadRaizControllerView">
-   <children>
-      <Pane prefHeight="800.0" prefWidth="599.0">
+<AnchorPane prefHeight="478.0" prefWidth="474.0" stylesheets="@../../../../../../../automoviliaria/src/ui/views/principal/view/Principal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.principal.controller.ViewPrincipalControllerView">
+<children>
+      <Pane fx:id="panelFondo" prefHeight="478.0" prefWidth="492.0">
          <children>
-            <Label fx:id="lblNameUser" layoutX="42.0" layoutY="53.0" />
-            <Pane fx:id="panelFondo" layoutX="-2.0" prefHeight="200.0" prefWidth="605.0">
-               <children>
-                  <ImageView fx:id="imgLogo" fitHeight="54.0" fitWidth="161.0" layoutX="399.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../automoviliaria/src/ui/images/logo.jpg" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="btnAddCar" layoutX="448.0" layoutY="120.0" mnemonicParsing="false" onAction="#AddCar" prefHeight="25.0" prefWidth="112.0" text="Add car" />
-                  <Text layoutX="44.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="56.98046875" />
-                  <Button fx:id="btnReport" layoutX="44.0" layoutY="120.0" mnemonicParsing="false" onAction="#Report" prefHeight="25.0" prefWidth="112.0" text="Report" />
-                  <Button fx:id="btnRegisterClient" layoutX="254.0" layoutY="120.0" mnemonicParsing="false" onAction="#RegisterCutomer" text="Register customer" />
-               </children>
-            </Pane>
-            <TextArea fx:id="txtDescription" layoutX="19.0" layoutY="213.0" prefHeight="102.0" prefWidth="566.0" text="The Ferrari, an iconic symbol of speed and elegance, is a masterpiece of automotive engineering.&#10; From its aerodynamic design to its powerful engine, every detail has been meticulously crafted to &#10;deliver an unparalleled driving experience. As you approach a Ferrari, its curvaceous bodywork and &#10;glossy paint instantly mesmerize you. Every line and angle is designed to cut through the wind and &#10;generate upward force, keeping the car glued to the tarmac even at dizzying speeds," />
+            <ImageView fx:id="imgLogo" fitHeight="54.0" fitWidth="161.0" layoutX="326.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../automoviliaria/src/ui/images/logo.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnAddCar" layoutX="180.0" layoutY="284.0" mnemonicParsing="false" onAction="#addCar" prefHeight="45.0" prefWidth="133.0" text="Add car" />
+            <Button fx:id="btnReport" layoutX="180.0" layoutY="194.0" mnemonicParsing="false" onAction="#Report" prefHeight="45.0" prefWidth="133.0" text="Report" />
+            <Button fx:id="btnRegisterClient" layoutX="180.0" layoutY="363.0" mnemonicParsing="false" onAction="#RegisterCutomer" prefHeight="45.0" prefWidth="133.0" text="Register customer" />
+            <Label fx:id="lblUsername" layoutX="35.0" layoutY="29.0" text="User">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNameUser" layoutX="35.0" layoutY="55.0" prefHeight="17.0" prefWidth="76.0">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCatalogue" layoutX="180.0" layoutY="111.0" mnemonicParsing="false" onAction="#openWindowCatalogue" prefHeight="45.0" prefWidth="133.0" text="Catalogue" />
          </children>
       </Pane>
    </children>

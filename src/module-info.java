@@ -8,6 +8,16 @@ module automoviliaria {
 	opens ui.start to javafx.graphics, javafx.fxml;
 	opens ui.views.login.controller;
 	opens ui.views.register.controller;
+	opens ui.views.principal.controller;
+	opens ui.views.addCar.controller;
+	opens ui.views.catalogue.controller;
+	opens ui.views.report.controller;
+	opens ui.views.registerCustomer.controller;
 	exports ui.views.principal.controller;
+	exports ui.views.addCar.controller;
+	exports ui.views.catalogue.controller;
+	exports ui.views.report.controller;
+	exports ui.views.registerCustomer.controller;
+	
 
 }

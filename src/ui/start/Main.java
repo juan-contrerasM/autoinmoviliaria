@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import ui.views.register.controller.ViewRegistroController;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -25,6 +26,7 @@ private Stage primaryStage;
 	try {
 	AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("/ui/views/login/view/ViewLogin.fxml"));
 	Scene scene = new Scene(root);
+	primaryStage.setResizable(false);
 	primaryStage.setTitle("Login");
 	primaryStage.setScene(scene);
 	primaryStage.show();
@@ -34,7 +36,7 @@ private Stage primaryStage;
 	//b.readJson("employee.json");
 	
 	
-	//Persistencia.guardaRegistroLog(MensajesInformationConstants.LANZAR_APLICACION, 1, "Cargar Aplicacion");
+	
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -49,6 +51,7 @@ private Stage primaryStage;
 			Parent root= load.load();
 			Scene escena= new Scene(root);
 			Stage stage= new Stage();
+			stage.setResizable(false);
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
@@ -62,10 +65,11 @@ private Stage primaryStage;
 	public void carcarVentanaPrincipal() {
 		
 		try {
-			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal3.fxml"));
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
 			Parent root= load.load();
 			Scene escena= new Scene(root);
 			Stage stage= new Stage();
+			stage.setResizable(false);
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
 			stage.setTitle("ventana de resgistro");
@@ -76,6 +80,80 @@ private Stage primaryStage;
 		
 		
 	}
+	
+	public void chargeWindowAddCar() {
+		try {
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/addCar/view/ViewAddCar.fxml"));
+			Parent root= load.load();
+			Scene escena= new Scene(root);
+			Stage stage= new Stage();
+
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana de resgistro");
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	public void chargeWindowCatalogue() {
+		try {
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/catalogue/view/ViewCatalogue.fxml"));
+			Parent root= load.load();
+			Scene escena= new Scene(root);
+			Stage stage= new Stage();
+
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana de catalogo");
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public void chargeWindowReport() {
+		try {
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/Report/view/ViewReport.fxml"));
+			Parent root= load.load();
+			Scene escena= new Scene(root);
+			Stage stage= new Stage();
+			
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana de resgistro");
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public void chargeWindowRegisterCustomer() {
+		try {
+			FXMLLoader load= new FXMLLoader(Main.class.getResource("/ui/views/registerCustomer/view/ViewRegisterCustomer.fxml"));
+			Parent root= load.load();
+			Scene escena= new Scene(root);
+			Stage stage= new Stage();
+			
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana de resgistro");
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	
+		
+	}
+	public void closeWimdow(Button btn) {
+        Stage stage = (Stage) btn.getScene().getWindow();
+        stage.close();
+    }
+		
+	
 	
 	public static void main(String[] args) {
 		launch(args);
