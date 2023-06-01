@@ -14,7 +14,7 @@ public class Emp extends Person {
 	public Emp(@JsonProperty("document") String document, @JsonProperty("name") String name,
 			@JsonProperty("lastName") String lastName, @JsonProperty("birth") String birth,
 			@JsonProperty("password") String password, @JsonProperty("gmail") String gmail,
-			@JsonProperty("userTyPe") UserType userTyPe) {
+			@JsonProperty("userTyPe") UserType userTyPe, @JsonProperty("recoverPassword")TypeRecoverPassword recoverPassword ) {
 		super(document, name, lastName, birth, password, gmail, userTyPe);
 		this.stateType = StateType.ACTIVE;
 	}

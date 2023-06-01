@@ -22,8 +22,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 public class Main extends Application {
 
 	private Stage primaryStage;
-	GlobalState globalState;
 	DataBase database = new DataBase();
+	GlobalState globalState;
+	
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -45,6 +46,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
 	// cargar ventana registro
 
 	public void carcarVentanaRegistro() {
@@ -64,7 +66,6 @@ public class Main extends Application {
 		}
 
 	}
-	
 	public void initializeGlobalState() {
 		globalState = GlobalState.getInstance();
 		List<Emp> employees = new ArrayList<Emp>();
@@ -76,7 +77,7 @@ public class Main extends Application {
 		}
 		globalState.setAllEmployees(employees);
 	}
-	
+
 	public void carcarVentanaPrincipal() {
 
 		try {
@@ -92,7 +93,9 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
+//hiyguyftdrtfytguhjk
 	
 	public Stage chargeWindowAddCar() {
 		try {
@@ -200,10 +203,14 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 
+		
 	}
 	public void closeWimdow() {
-		primaryStage.close();
+		
+		  
 	}
+
+
 
 	public static void main(String[] args) {
 		launch(args);

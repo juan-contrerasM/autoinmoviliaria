@@ -1,28 +1,41 @@
-[ {
-  "document" : "433443443",
-  "name" : "Joan Manuel",
-  "lastName" : "Gonzalez",
-  "birth" : "2023-05-17",
-  "password" : "123456",
-  "gmail" : "joanmanuel@gmail.com",
-  "userTyPe" : "EMPLEADO",
-  "stateType" : "ACTIVE"
+[{
+	"document": "123",
+	"name": "Joan Manuel",
+	"lastName": "Gonzalez",
+	"birth": "2023-05-17",
+	"password": "123",
+	"gmail": "joanmanuel@gmail.com",
+	"userTyPe": "EMPLEADO",
+	"stateType": "ACTIVE",
+	"recoverPassword": "METALCARSS"
 }, {
-  "document" : "123456789",
-  "name" : "Juliana",
-  "lastName" : "Gonzalez",
-  "birth" : "2023-05-17",
-  "password" : "juliana123",
-  "gmail" : "juliana@gmail.com",
-  "userTyPe" : "EMPLEADO",
-  "stateType" : "ACTIVE"
+	"document": "123456789",
+	"name": "Juliana",
+	"lastName": "Gonzalez",
+	"birth": "2023-05-17",
+	"password": "juliana123",
+	"gmail": "juliana@gmail.com",
+	"userTyPe": "EMPLEADO",
+	"stateType": "ACTIVE",
+	"recoverPassword": "METALCARSS"
 }, {
-  "document" : "34345",
-  "name" : "rfrfrefre",
-  "lastName" : "feerefr",
-  "birth" : "2023-05-29",
-  "password" : "fdsffsdfdssf",
-  "gmail" : "sfsf@ksd.com",
-  "userTyPe" : "EMPLEADO",
-  "stateType" : "ACTIVE"
-} ]
+	"document": "34345",
+	"name": "rfrfrefre",
+	"lastName": "feerefr",
+	"birth": "2023-05-29",
+	"password": "fdsffsdfdssf",
+	"gmail": "sfsf@ksd.com",
+	"userTyPe": "EMPLEADO",
+	"stateType": "ACTIVE",
+	"recoverPassword": "METALCARSS"
+}, {
+	"document": "sadf",
+	"name": "1324",
+	"lastName": "gvbhnjhbgvfc",
+	"birth": "2023-06-13",
+	"password": "dsff",
+	"gmail": "asdfvf",
+	"userTyPe": "EMPLEADO",
+	"stateType": "ACTIVE",
+	"recoverPassword": "METALCARSS"
+}]

@@ -90,8 +90,8 @@ public class ViewRegistroController implements Initializable {
 		String email = txtEmail.getText();
 		String password = txtPassword.getText();
 		UserType userType = (UserType) ComboUserType.getSelectionModel().getSelectedItem();
-
-		Emp employee = new Emp(document, name, lastName, birth, password, email, userType);
+		TypeRecoverPassword recoverPassword= (TypeRecoverPassword)ComboKeyword.getSelectionModel().getSelectedItem();
+		Emp employee = new Emp(document, name, lastName, birth, password, email, userType, recoverPassword);
 
 		b.convertClassAndSaveJson(employee, "resources/database/employee.json");
 	}

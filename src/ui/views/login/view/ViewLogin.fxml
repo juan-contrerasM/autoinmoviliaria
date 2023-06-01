@@ -24,14 +24,6 @@
                   <Font name="Times New Roman Bold" size="12.0" />
                </font>
             </TextField>
-            <Button fx:id="btnRegistrarse" layoutX="227.0" layoutY="272.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="25.0" prefWidth="79.0" text="sign in">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="Times New Roman Bold" size="12.0" />
-               </font>
-            </Button>
             <Text fx:id="txtSingup" fill="WHITE" layoutX="119.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sing up" textAlignment="CENTER" wrappingWidth="79.0">
                <font>
                   <Font name="Times New Roman Bold" size="24.0" />

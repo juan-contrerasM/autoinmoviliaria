@@ -84,17 +84,13 @@ public class ViewLoginController implements Initializable {
 
 	}
 
-	@FXML
-	void registrarse(ActionEvent event) {
-		//main.closeWimdow(btnEntrar);
-		main.carcarVentanaRegistro();
-	}
+
 
 	@FXML
 	void entrar(ActionEvent event) throws HeadlessException, IOException {
 		getFields();
-		//main.closeWimdow(btnEntrar);
-		main.carcarVentanaPrincipal();
+		
+		
 	}
 	
 	public void getFields() {
@@ -108,11 +104,15 @@ public class ViewLoginController implements Initializable {
 		
 		if(currentUser != null) {
 			globalState.setCurrentUser(currentUser);
-			System.out.println("El empleado existe -> " + currentUser != null);
+			main.carcarVentanaPrincipal();
+		//	System.out.println("El empleado existe -> " + currentUser != null);
+		}
+		else {
+			JOptionPane.showMessageDialog(null,"credenciales incorrectas");
 		}
 		//condicion para pasar
 		// currentUser != null
-		
+		System.out.println("El empleado existe -> " + currentUser != null);
 		
 		
 	}

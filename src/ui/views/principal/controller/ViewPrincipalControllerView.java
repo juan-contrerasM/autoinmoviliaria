@@ -44,24 +44,25 @@ public class ViewPrincipalControllerView {
 	void Report(ActionEvent event) {
 		System.out.println("Actual usuario -> " + globalState.getCurrentUser().getName());
 		
-		main.closeWimdow(btnReport);
+		//main.closeWimdow(btnReport);
 		main.chargeWindowReport();
 	}
 
 	@FXML
 	void RegisterCutomer(ActionEvent event) {
-		main.closeWimdow(btnReport);
+		//main.closeWimdow(btnReport);
 		main.chargeWindowRegisterCustomer();
+	}
 
 	@FXML
 	void openWindowCatalogue(ActionEvent event) {
-		main.closeWimdow(btnReport);
+	//	main.closeWimdow(btnReport);
 		main.chargeWindowCatalogue();
 	}
 
 	@FXML
 	void addCar(ActionEvent event) {
-		main.closeWimdow(btnReport);
+		//main.closeWimdow(btnReport);
 		main.chargeWindowAddCar();
 	}
 
