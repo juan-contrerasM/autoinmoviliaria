@@ -5,6 +5,7 @@ module automoviliaria {
 	requires java.logging;
 	requires java.desktop;
 	
+
 	exports domain.person;
 	exports infrastructure.models.person.emp;
 	
@@ -16,6 +17,10 @@ module automoviliaria {
 	opens ui.views.catalogue.controller;
 	opens ui.views.report.controller;
 	opens ui.views.registerCustomer.controller;
+	opens ui.views.recoverPassword.controller;
+	opens ui.views.changePassword.controller;
+	exports ui.views.changePassword.controller;
+	exports ui.views.recoverPassword.controller;
 	exports ui.views.principal.controller;
 	exports ui.views.addCar.controller;
 	exports ui.views.catalogue.controller;

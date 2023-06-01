@@ -19,6 +19,7 @@ public class Main extends Application {
 
 	private Stage primaryStage;
 	DataBase b = new DataBase();
+	
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -33,7 +34,7 @@ public class Main extends Application {
 			primaryStage.show();
 
 			DataBase b = new DataBase();
-			// b.readJson("employee.json");
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -44,15 +45,15 @@ public class Main extends Application {
 	public void carcarVentanaRegistro() {
 
 		try {
-			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/register/view/ViewRegistro.fxml"));
+			FXMLLoader load = new FXMLLoader(getClass().getResource("/ui/views/register/view/ViewRegistro.fxml"));
 			Parent root = load.load();
 			Scene escena = new Scene(root);
-			Stage stage = new Stage();
-			stage.setResizable(false);
-			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(escena);
-			stage.setTitle("ventana de resgistro");
-			stage.showAndWait();
+			primaryStage = new Stage();
+			primaryStage.setResizable(false);
+			primaryStage.initModality(Modality.APPLICATION_MODAL);
+			primaryStage.setScene(escena);
+			primaryStage.setTitle("ventana de resgistro");
+			primaryStage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -66,18 +67,19 @@ public class Main extends Application {
 			Parent root = load.load();
 			Scene escena = new Scene(root);
 			Stage stage = new Stage();
-			stage.setResizable(false);
+		
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
-			stage.setTitle("ventana de resgistro");
+			stage.setTitle("ventana principal");
 			stage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
-
-	public void chargeWindowAddCar() {
+//hiyguyftdrtfytguhjk
+	
+	public Stage chargeWindowAddCar() {
 		try {
 			FXMLLoader load = new FXMLLoader(Main.class.getResource("/ui/views/addCar/view/ViewAddCar.fxml"));
 			Parent root = load.load();
@@ -86,11 +88,13 @@ public class Main extends Application {
 
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
-			stage.setTitle("ventana de resgistro");
+			stage.setTitle("ventana añadir carro");
 			stage.showAndWait();
+			return stage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return null;
 
 	}
 
@@ -120,7 +124,7 @@ public class Main extends Application {
 
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
-			stage.setTitle("ventana de resgistro");
+			stage.setTitle("ventana reporte");
 			stage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -130,6 +134,7 @@ public class Main extends Application {
 
 	public void chargeWindowRegisterCustomer() {
 		try {
+			
 			FXMLLoader load = new FXMLLoader(
 					Main.class.getResource("/ui/views/registerCustomer/view/ViewRegisterCustomer.fxml"));
 			Parent root = load.load();
@@ -138,18 +143,56 @@ public class Main extends Application {
 
 			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.setScene(escena);
-			stage.setTitle("ventana de resgistro");
+			stage.setTitle("ventana registrarUusario");
+			stage.showAndWait();
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	public void chargeWindowRecoverPasswors() {
+		try {
+			FXMLLoader load = new FXMLLoader(
+					Main.class.getResource("/ui/views/recoverPassword/view/ViewRecoverPassword.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
+
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana palabra clave");
 			stage.showAndWait();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
+	public void chargeWindowChangePassword() {
+		try {
+			FXMLLoader load = new FXMLLoader(
+					Main.class.getResource("/ui/views/changePassword/view/ViewChangePassword.fxml"));
+			Parent root = load.load();
+			Scene escena = new Scene(root);
+			Stage stage = new Stage();
 
-	public void closeWimdow(Button btn) {
-		Stage stage = (Stage) btn.getScene().getWindow();
-		stage.close();
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(escena);
+			stage.setTitle("ventana actualizar clave");
+			stage.showAndWait();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
 	}
+	public void closeWimdow() {
+		primaryStage.close();
+		  
+	}
+
+
 
 	public static void main(String[] args) {
 		launch(args);

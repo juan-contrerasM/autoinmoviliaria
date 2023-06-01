@@ -22,7 +22,7 @@
 .button:hover{
 	-fx-background-color:#888c90;
 } 
-#txtEmail, #txtCell, #txtLastName, #txtDocument, #txtPassword, #txtName, #dateBirthy, #ComboUserType{
+#txtEmail, #txtCell, #txtLastName, #txtDocument, #txtPassword, #txtName, #dateBirthy, #ComboUserType, #ComboKeyword, #txtCountry{
 	-fx-background-color:transparent;
 	-fx-border-color:#fff;
 	-fx-border-width:0px 0px 3px 0px;

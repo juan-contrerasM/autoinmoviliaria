@@ -11,9 +11,11 @@ import javafx.fxml.FXML;
 	import javafx.scene.layout.Pane;
 	import ui.start.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 	public class ViewPrincipalControllerView {
 		Main main = new Main();
+		Stage stage= new Stage();
 		
 		@FXML
 	    private ImageView imgLogo;
@@ -43,20 +45,21 @@ import javafx.scene.text.Text;
 
 	    @FXML
 	    void Report(ActionEvent event) {
-	    	main.closeWimdow(btnReport);
 	    	main.chargeWindowReport();
 	    }
 
 	    @FXML
 	    void RegisterCutomer(ActionEvent event) {
-	    	main.closeWimdow(btnReport);
-	    	main.chargeWindowRegisterCustomer();
+	    	
+	    	main.chargeWindowRegisterCustomer(); 
+	    	
+	    
 
 	    }
 
 	    @FXML
 	    void openWindowCatalogue(ActionEvent event) {
-	    	main.closeWimdow(btnReport);
+	    //	main.closeWimdow(btnReport);
 	    	main.chargeWindowCatalogue();
 	    
 	    	
@@ -65,15 +68,16 @@ import javafx.scene.text.Text;
 
 	    @FXML
 	    void addCar(ActionEvent event) {
-	    	main.closeWimdow(btnReport);
+	    
 	    	main.chargeWindowAddCar();
-	    	
+	    
 
 	    }
+}
 
 	 
 
-	}
+	
 
 
 

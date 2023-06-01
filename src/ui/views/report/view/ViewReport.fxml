@@ -11,7 +11,7 @@
    <children>
       <Pane fx:id="paneFondo" prefHeight="424.0" prefWidth="453.0" stylesheets="@Report.css">
          <children>
-            <TextArea fx:id="txtAreaShowReport" layoutX="51.0" editable="false" layoutY="72.0" prefHeight="326.0" prefWidth="352.0" />
+            <TextArea fx:id="txtAreaShowReport" editable="false" layoutX="51.0" layoutY="72.0" prefHeight="326.0" prefWidth="352.0" />
             <ImageView fx:id="imgLogo" fitHeight="42.0" fitWidth="132.0" layoutX="307.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo2.jpg" />
@@ -22,6 +22,7 @@
                   <Font name="Times New Roman Bold" size="20.0" />
                </font>
             </Label>
+            <Button fx:id="btnClose" layoutX="51.0" layoutY="33.0" mnemonicParsing="false" onAction="#close" text="close" />
          </children>
       </Pane>
    </children>

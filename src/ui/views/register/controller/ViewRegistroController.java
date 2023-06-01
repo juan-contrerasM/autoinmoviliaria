@@ -5,6 +5,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import ui.start.*;
+import domain.person.enumm.TypeRecoverPassword;
 import domain.person.enumm.UserType;
 import infrastructure.models.person.emp.*;
 import infrastructure.models.principal.Automoviliaria;
@@ -28,9 +29,16 @@ public class ViewRegistroController implements Initializable {
 	DataBase b = new DataBase();
 	Automoviliaria a = new Automoviliaria();
 	Main main= new Main();
+	private ObservableList<TypeRecoverPassword> listRecoverPassword = FXCollections.observableArrayList();
 	
+
 	@FXML
 	private ComboBox<UserType> ComboUserType;
+	@FXML
+	private ComboBox<TypeRecoverPassword> ComboKeyword;
+
+	@FXML
+	private TextField txtCountry;
 
 	@FXML
 	private DatePicker dateBirthy;
@@ -70,7 +78,7 @@ public class ViewRegistroController implements Initializable {
 	@FXML
 	void RegistrarUsuario(ActionEvent event) {
 		registrarUsuario();
-		main.closeWimdow(bthRegistrar);
+		//main.closeWimdow(bthRegistrar);
     main.carcarVentanaPrincipal();
 	}
 
@@ -98,5 +106,17 @@ public class ViewRegistroController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		cargarTipoUsuaurio();
+		listRecoverPassword.add(TypeRecoverPassword.CHEVROLET);
+		listRecoverPassword.add(TypeRecoverPassword.METALCARSS);
+		listRecoverPassword.add(TypeRecoverPassword.NISSAN);
+		ComboKeyword.setItems(listRecoverPassword);
+		
+	}
+	public ObservableList<TypeRecoverPassword> getListRecoverPassword() {
+		return listRecoverPassword;
+	}
+
+	public void setListRecoverPassword(ObservableList<TypeRecoverPassword> listRecoverPassword) {
+		this.listRecoverPassword = listRecoverPassword;
 	}
 }

@@ -1,6 +1,6 @@
 package domain.vehicle.enums;
 
-public enum EstadoVehiculo {
+public enum EstadoVehiculo{
 	
 	NUEVO,
 	USADO

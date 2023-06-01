@@ -80,19 +80,20 @@ public class ViewLoginController implements Initializable{
 
 	@FXML
 	void recuperarClave(MouseEvent event) {
+		main.chargeWindowRecoverPasswors();
 
 	}
 
 	@FXML
 	void registrarse(ActionEvent event) {
-		main.closeWimdow(btnEntrar);
+		//main.closeWimdow(btnEntrar);
 		main.carcarVentanaRegistro();
 		
 	}
 
 	@FXML
 	void entrar(ActionEvent event) throws HeadlessException, IOException {
-			main.closeWimdow(btnEntrar);
+		//	main.closeWimdow(btnEntrar);
 			main.carcarVentanaPrincipal();
 			
 			

@@ -26,8 +26,8 @@
                   <Font name="Times New Roman" size="14.0" />
                </font>
             </Label>
+            <Button fx:id="btnClose" layoutX="458.0" layoutY="28.0" mnemonicParsing="false" onAction="#close" text="close" />
          </children>
       </Pane>
    </children>
 </AnchorPane>
-

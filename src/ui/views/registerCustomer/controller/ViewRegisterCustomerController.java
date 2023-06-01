@@ -1,6 +1,7 @@
 package ui.views.registerCustomer.controller;
 
 import java.io.IOException;
+import ui.start.*;
 
 import domain.person.enumm.UserType;
 import javafx.collections.FXCollections;
@@ -16,7 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class ViewRegisterCustomerController {
-
+		Main main= new Main();
 
 	  @FXML
 	    private ComboBox<?> ComboUserType;
@@ -50,7 +51,9 @@ public class ViewRegisterCustomerController {
 
 	    @FXML
 	    void RegistrarUsuario(ActionEvent event) {
-
+	    	//main.closeWimdow(bthRegistrar);
+	    	main.carcarVentanaPrincipal();
+	  
 	    }
     
 

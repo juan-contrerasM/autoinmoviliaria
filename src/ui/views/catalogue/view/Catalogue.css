@@ -6,3 +6,10 @@
 	-fx-background-size: cover;
 	-fx-height: 450px;
 }
+.button{
+	-fx-background-color:#fff;
+	-fx-cursor:hand;
+}
+.button:hover{
+	-fx-background-color:#888c90;
+}
