@@ -4,9 +4,12 @@ module automoviliaria {
 	requires com.fasterxml.jackson.databind;
 	requires java.logging;
 	requires java.desktop;
+	requires com.fasterxml.jackson.annotation;
+	requires java.compiler;
 	
 
 	exports domain.person;
+	exports domain.person.enumm;
 	exports infrastructure.models.person.emp;
 	
 	opens ui.start to javafx.graphics, javafx.fxml;

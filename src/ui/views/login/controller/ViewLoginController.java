@@ -1,16 +1,19 @@
 package ui.views.login.controller;
 
-
 import java.awt.HeadlessException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
+import infrastructure.models.person.emp.*;
+
 import domain.person.enumm.UserType;
 import infrastructure.models.principal.Automoviliaria;
+import infrastructure.state.GlobalState;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,55 +31,52 @@ import javafx.scene.text.Text;
 import ui.start.Main;
 import ui.views.register.controller.ViewRegistroController;
 
-public class ViewLoginController implements Initializable{
-	Main main= new Main();
-	Automoviliaria automoviliaria= new Automoviliaria();
+public class ViewLoginController implements Initializable {
 	
+	Main main = new Main();
+	Automoviliaria automoviliaria = new Automoviliaria();
+	GlobalState globalState = GlobalState.getInstance();
+	FunctionsEmp functionsEmp = new FunctionsEmp();
 	
-	private ObservableList<UserType> listUserType= FXCollections.observableArrayList();
-		
-	 Stage stage = new Stage();
+	private ObservableList<UserType> listUserType = FXCollections.observableArrayList();
 
-	    @FXML
-	    private Text txtSingup;
+	Stage stage = new Stage();
 
-	    @FXML
-	    private ImageView imgCandado;
+	@FXML
+	private Text txtSingup;
 
-	    @FXML
-	    private ImageView imgPerson;
+	@FXML
+	private ImageView imgCandado;
 
-	    @FXML
-	    private TextField txtDocument;
+	@FXML
+	private ImageView imgPerson;
 
+	@FXML
+	private TextField txtDocument;
 
-	    @FXML
-	    private Button btnRegistrarse;
+	@FXML
+	private Button btnRegistrarse;
 
-	    @FXML
-	    private ImageView imgLogo;
+	@FXML
+	private ImageView imgLogo;
 
-	    @FXML
-	    private Pane pane2;
+	@FXML
+	private Pane pane2;
 
-	 
+	@FXML
+	private ComboBox<UserType> comboUserType;
 
-	    @FXML
-	    private ComboBox<UserType> comboUserType;
+	@FXML
+	private AnchorPane pane;
 
-	    @FXML
-	    private AnchorPane pane;
+	@FXML
+	private Label txtUserType;
 
-	    @FXML
-	    private Label txtUserType;
+	@FXML
+	private TextField txtContrasenia;
 
-	    @FXML
-	    private TextField txtContrasenia;
-
-	    @FXML
-	    private Button btnEntrar;
-
-
+	@FXML
+	private Button btnEntrar;
 
 	@FXML
 	void recuperarClave(MouseEvent event) {
@@ -88,30 +88,45 @@ public class ViewLoginController implements Initializable{
 	void registrarse(ActionEvent event) {
 		//main.closeWimdow(btnEntrar);
 		main.carcarVentanaRegistro();
-		
 	}
 
 	@FXML
 	void entrar(ActionEvent event) throws HeadlessException, IOException {
-		//	main.closeWimdow(btnEntrar);
-			main.carcarVentanaPrincipal();
-			
-			
-		
-		   
+		getFields();
+		//main.closeWimdow(btnEntrar);
+		main.carcarVentanaPrincipal();
 	}
+	
+	public void getFields() {
+		String document = txtDocument.getText();
+		String password = txtContrasenia.getText();
+		UserType userType = (UserType) comboUserType.getSelectionModel().getSelectedItem();
+		
+		List<Emp> employees = globalState.getAllEmployees();
+		
+		Emp currentUser = functionsEmp.checkLoginEmployee(document, password, employees);
+		
+		if(currentUser != null) {
+			globalState.setCurrentUser(currentUser);
+			System.out.println("El empleado existe -> " + currentUser != null);
+		}
+		//condicion para pasar
+		// currentUser != null
 		
 		
-	 public void cargarTipoUsuaurio() {
-	    	listUserType.add(UserType.ADMINISTRADOR);
-	    	listUserType.add(UserType.EMPLEADO);
-	    	comboUserType.setItems(listUserType);
-	 }
-	    @Override
-	  public void initialize(URL arg0, ResourceBundle arg1) {
-			cargarTipoUsuaurio();
-	    
-	    }
-	 
+		
+	}
+
+	public void cargarTipoUsuaurio() {
+		listUserType.add(UserType.ADMINISTRADOR);
+		listUserType.add(UserType.EMPLEADO);
+		comboUserType.setItems(listUserType);
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		cargarTipoUsuaurio();
+
+	}
 
 }

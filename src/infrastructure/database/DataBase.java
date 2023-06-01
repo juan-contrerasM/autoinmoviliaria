@@ -15,13 +15,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.util.TypeKey;
 
 public class DataBase {
-
-//	public void print(Map<String, Object> example) {
-//		example.forEach((key, value) -> System.out.println(key + " " + value));
-//	}
 
 	// Leer archivo jso y convertir a lista de objetos
 	public <T> List<T> readJson(String pathFile) throws IOException {
@@ -62,7 +59,7 @@ public class DataBase {
 		return saveSucces;
 
 	}
-	
+
 	// Sobreescribe el json
 	public boolean saveJson(String json, String pathFile) {
 		try (FileWriter file = new FileWriter(pathFile)) {
@@ -72,6 +69,33 @@ public class DataBase {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	public <T> List<T> jsonToObjectList(String pathFile, TypeReference<T> type) throws IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		List<Map<String, Object>> listOfMaps = mapper.readValue((new File(pathFile)),
+				new TypeReference<List<Map<String, Object>>>() {
+				});
+		List<T> objectsClass = new ArrayList<T>();
+
+		for (Map<String, Object> aver : listOfMaps) {
+			String keeee = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(aver);
+			T nose = jsonToObject(keeee, type);
+			objectsClass.add(nose);
+		}
+
+		return objectsClass;
+	}
+
+	public <T> T jsonToObject(String json, TypeReference<T> type) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		T target = null;
+		try {
+			target = objectMapper.readValue(json, type);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		return target;
 	}
 
 	// Convierte un mao a una clase

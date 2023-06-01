@@ -25,12 +25,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class ViewRegistroController implements Initializable {
-	
+
 	DataBase b = new DataBase();
 	Automoviliaria a = new Automoviliaria();
 	Main main= new Main();
 	private ObservableList<TypeRecoverPassword> listRecoverPassword = FXCollections.observableArrayList();
-	
 
 	@FXML
 	private ComboBox<UserType> ComboUserType;
@@ -79,7 +78,7 @@ public class ViewRegistroController implements Initializable {
 	void RegistrarUsuario(ActionEvent event) {
 		registrarUsuario();
 		//main.closeWimdow(bthRegistrar);
-    main.carcarVentanaPrincipal();
+		main.carcarVentanaPrincipal();
 	}
 
 	public void registrarUsuario() {
@@ -91,9 +90,9 @@ public class ViewRegistroController implements Initializable {
 		String email = txtEmail.getText();
 		String password = txtPassword.getText();
 		UserType userType = (UserType) ComboUserType.getSelectionModel().getSelectedItem();
-		
+
 		Emp employee = new Emp(document, name, lastName, birth, password, email, userType);
-		
+
 		b.convertClassAndSaveJson(employee, "resources/database/employee.json");
 	}
 

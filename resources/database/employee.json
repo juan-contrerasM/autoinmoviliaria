@@ -5,7 +5,8 @@
   "birth" : "2023-05-17",
   "password" : "123456",
   "gmail" : "joanmanuel@gmail.com",
-  "userTyPe" : "EMPLEADO"
+  "userTyPe" : "EMPLEADO",
+  "stateType" : "ACTIVE"
 }, {
   "document" : "123456789",
   "name" : "Juliana",
@@ -13,13 +14,15 @@
   "birth" : "2023-05-17",
   "password" : "juliana123",
   "gmail" : "juliana@gmail.com",
-  "userTyPe" : "EMPLEADO"
+  "userTyPe" : "EMPLEADO",
+  "stateType" : "ACTIVE"
 }, {
-  "document" : "iuyg",
-  "name" : "ugy",
-  "lastName" : "uiiyghi",
-  "birth" : "2023-05-08",
-  "password" : "jnuuh",
-  "gmail" : "jhgbj",
-  "userTyPe" : "EMPLEADO"
+  "document" : "34345",
+  "name" : "rfrfrefre",
+  "lastName" : "feerefr",
+  "birth" : "2023-05-29",
+  "password" : "fdsffsdfdssf",
+  "gmail" : "sfsf@ksd.com",
+  "userTyPe" : "EMPLEADO",
+  "stateType" : "ACTIVE"
 } ]

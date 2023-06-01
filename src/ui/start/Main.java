@@ -1,9 +1,12 @@
 package ui.start;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import infrastructure.database.*;
-
+import infrastructure.models.person.emp.Emp;
+import infrastructure.state.GlobalState;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Modality;
@@ -14,16 +17,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 public class Main extends Application {
 
 	private Stage primaryStage;
-	DataBase b = new DataBase();
-	
+	GlobalState globalState;
+	DataBase database = new DataBase();
 
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
+		initializeGlobalState();
 		try {
 			AnchorPane root = (AnchorPane) FXMLLoader
 					.load(getClass().getResource("/ui/views/login/view/ViewLogin.fxml"));
@@ -59,7 +64,19 @@ public class Main extends Application {
 		}
 
 	}
-
+	
+	public void initializeGlobalState() {
+		globalState = GlobalState.getInstance();
+		List<Emp> employees = new ArrayList<Emp>();
+		try {
+//			employees = database.jsonArrayToList("resources/database/employee.json", Emp.class);
+			employees = database.jsonToObjectList("resources/database/employee.json", new TypeReference<Emp>(){});
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		globalState.setAllEmployees(employees);
+	}
+	
 	public void carcarVentanaPrincipal() {
 
 		try {
@@ -75,9 +92,7 @@ public class Main extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
-//hiyguyftdrtfytguhjk
 	
 	public Stage chargeWindowAddCar() {
 		try {
@@ -185,14 +200,10 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 
-		
 	}
 	public void closeWimdow() {
 		primaryStage.close();
-		  
 	}
-
-
 
 	public static void main(String[] args) {
 		launch(args);
