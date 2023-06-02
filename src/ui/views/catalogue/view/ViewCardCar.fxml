@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="281.0" prefWidth="355.0" stylesheets="@../../../../../../../automoviliaria/src/ui/views/changePassword/view/ChangePassword.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.catalogue.controller.ViewCatalogueController">
+   <children>
+      <Pane fx:id="panelFondo" prefHeight="281.0" prefWidth="355.0" stylesheets="@../../login/view/Login.css">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="173.0" layoutX="94.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/ford-mustang-electric-by-charge-cars.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnRent" layoutX="60.0" layoutY="225.0" mnemonicParsing="false" onAction="#Rent" prefHeight="25.0" prefWidth="68.0" text="Rent" />
+            <Button fx:id="btntSale" layoutX="227.0" layoutY="225.0" mnemonicParsing="false" onAction="#Sale" prefHeight="25.0" prefWidth="68.0" text="Sale" />
+            <TextArea fx:id="textAreaInfo" layoutX="9.0" layoutY="122.0" prefHeight="100.0" prefWidth="340.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

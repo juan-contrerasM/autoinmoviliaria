@@ -29,9 +29,7 @@ public class ViewCatalogueController {
     
     @FXML
     private Pane panelfondo;
-    
-    @FXML
-    private GridPane carGrid;
+
     @FXML
      void close (ActionEvent event ) {
     	//main.closeWimdow(btnClose);

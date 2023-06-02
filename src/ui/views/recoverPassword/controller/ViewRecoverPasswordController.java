@@ -65,8 +65,8 @@ public class ViewRecoverPasswordController implements Initializable {
 	
 	
 	
-	void sendToMainView(ActionEvent event, Person currentClient) throws HeadlessException, IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
+	void sendToCHangePasswordView(ActionEvent event, Person currentClient) throws HeadlessException, IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
 		root = loader.load();
 
 		ViewPrincipalControllerView scene2Controller = loader.getController();
