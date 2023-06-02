@@ -1,6 +1,7 @@
 package ui.views.recoverPassword.controller;
 
 import java.awt.HeadlessException;
+import ui.views.changePassword.controller.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -8,6 +9,7 @@ import java.util.ResourceBundle;
 import domain.person.Person;
 import domain.person.enumm.TypeRecoverPassword;
 import domain.person.enumm.UserType;
+import infrastructure.state.GlobalState;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,10 +26,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import ui.start.*;
+import ui.views.login.controller.ViewLoginController;
 import ui.views.principal.controller.ViewPrincipalControllerView;
 
 public class ViewRecoverPasswordController implements Initializable {
 	Main main= new Main();
+	ViewLoginController loginController = new ViewLoginController();
+	private GlobalState globalState = GlobalState.getInstance();
 	private Stage stage;
 	private Parent root;
 	private Scene scene;
@@ -48,9 +53,11 @@ public class ViewRecoverPasswordController implements Initializable {
     @FXML
     private Button btnConitune;
     @FXML
-    void openWindowPassword(ActionEvent event) {
+    void openWindowPassword(ActionEvent event) throws HeadlessException, IOException {
+    
     	//main.closeWimdow(btnConitune);
-    	main.chargeWindowChangePassword();
+    	//main.chargeWindowChangePassword();
+    	sendToCHangePasswordView(event, null);
     }
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -66,11 +73,11 @@ public class ViewRecoverPasswordController implements Initializable {
 	
 	
 	void sendToCHangePasswordView(ActionEvent event, Person currentClient) throws HeadlessException, IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/changePassword/view/ViewChangePassword.fxml"));
 		root = loader.load();
 
-		ViewPrincipalControllerView scene2Controller = loader.getController();
-		scene2Controller.changeLabelButton(currentClient.getUserTyPe());
+		ViewChangePasswordController scene2Controller = loader.getController();
+		
 
 		// root =
 		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
