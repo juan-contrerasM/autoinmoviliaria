@@ -1,6 +1,7 @@
 package ui.start;
 
 import java.io.IOException;
+import infrastructure.models.person.admi.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,13 +66,19 @@ public class Main extends Application {
 	public void initializeGlobalState() {
 		globalState = GlobalState.getInstance();
 		List<Emp> employees = new ArrayList<Emp>();
+		List<Admi> managers = new ArrayList<Admi>();
 		try {
 //			employees = database.jsonArrayToList("resources/database/employee.json", Emp.class);
 			employees = database.jsonToObjectList("resources/database/employee.json", new TypeReference<Emp>(){});
+			managers = database.jsonToObjectList("resources/database/manager.json", new TypeReference<Admi>(){});
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		globalState.setAllEmployees(employees);
+		globalState.setAllManagers(managers);
+		for( Admi m: managers) {
+			System.out.println(m.getDocument());
+		}
 	}
 
 	public void carcarVentanaPrincipal() {

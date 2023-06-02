@@ -1,6 +1,7 @@
 package infrastructure.state;
 
 import java.util.ArrayList;
+import infrastructure.models.person.admi.*;
 import java.util.List;
 
 import domain.person.Person;
@@ -11,6 +12,7 @@ public class GlobalState {
 	// of type Singleton
 	private static GlobalState single_instance = null;
 	private List<Emp> allEmployees = new ArrayList<Emp>();
+	private List<Admi> allManagers = new ArrayList<Admi>();
 	private Person currentUser = null;
 
 	// Constructor
@@ -43,5 +45,14 @@ public class GlobalState {
 	public void setCurrentUser(Person currentUser) {
 		this.currentUser = currentUser;
 	}
+
+	public List<Admi> getAllManagers() {
+		return allManagers;
+	}
+
+	public void setAllManagers(List<Admi> allManagers) {
+		this.allManagers = allManagers;
+	}
+	
 
 }

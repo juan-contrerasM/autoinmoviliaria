@@ -4,12 +4,19 @@ import domain.person.enumm.UserType;
 
 import java.time.LocalDate;
 
-public class Admi extends Person {
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-	public Admi(String document, String name, String lastName, String birth, String password, String gmail,UserType userTyPe) {
+public class Admi extends Person {
+	@JsonCreator
+	public Admi(@JsonProperty("document") String document, @JsonProperty("name") String name,
+			@JsonProperty("lastName") String lastName, @JsonProperty("birth") String birth,
+			@JsonProperty("password") String password, @JsonProperty("gmail") String gmail,
+			@JsonProperty("userTyPe") UserType userTyPe) {
 		super(document, name, lastName, birth, password, gmail, userTyPe);
-		// TODO Auto-generated constructor stub
 	}
+		// TODO Auto-generated constructor stub
+	
 
 	
 

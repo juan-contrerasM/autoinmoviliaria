@@ -1,6 +1,7 @@
 package ui.views.login.controller;
 
 import java.awt.HeadlessException;
+import ui.views.recoverPassword.controller.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -11,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
+import infrastructure.models.person.admi.Admi;
+import infrastructure.models.person.admi.FuntionsAdmi;
 import infrastructure.models.person.emp.*;
 import domain.person.Person;
 import domain.person.enumm.UserType;
@@ -41,6 +44,7 @@ public class ViewLoginController implements Initializable {
 	Automoviliaria automoviliaria = new Automoviliaria();
 	GlobalState globalState = GlobalState.getInstance();
 	FunctionsEmp functionsEmp = new FunctionsEmp();
+	FuntionsAdmi funtionsAdmi= new FuntionsAdmi();
 
 	private ObservableList<UserType> listUserType = FXCollections.observableArrayList();
 	private Stage stage;
@@ -85,8 +89,9 @@ public class ViewLoginController implements Initializable {
 	private Button btnEntrar;
 
 	@FXML
-	void recuperarClave(MouseEvent event) {
-		// main.chargeWindowRecoverPasswors();
+	void recuperarClave(MouseEvent event) throws HeadlessException, IOException {
+		Person currentUser = getFieldsEmp();
+		sendToRecoverPasswordView(event, currentUser );
 	}
 
 	@FXML
@@ -97,16 +102,24 @@ public class ViewLoginController implements Initializable {
 
 	@FXML
 	void entrar(ActionEvent event) throws HeadlessException, IOException {
-		Person currentUser = getFields();
+		Person currentUser = getFieldsEmp();
 		if (currentUser != null) {
 			sendToMainView(event, currentUser);
 			return;
+		}
+		else {
+			 currentUser = getFieldsAdmi();
+			 if (currentUser != null) {
+					sendToMainView(event, currentUser);
+					return;
+				}
+			
 		}
 		JOptionPane.showMessageDialog(null, "credenciales incorrectas");
 		
 	}
 
-	public Person getFields() {
+	public Person getFieldsEmp() {
 		String document = txtDocument.getText();
 		String password = txtContrasenia.getText();
 		UserType userType = (UserType) comboUserType.getSelectionModel().getSelectedItem();
@@ -118,9 +131,24 @@ public class ViewLoginController implements Initializable {
 			System.out.println("debrioeod entar");
 			globalState.setCurrentUser(currentUser);
 		}
+		
 
 		return currentUser;
 
+	}
+	public Person getFieldsAdmi() {
+		String document = txtDocument.getText();
+		String password = txtContrasenia.getText();
+		UserType userType = (UserType) comboUserType.getSelectionModel().getSelectedItem();
+
+		List<Admi> managers = globalState.getAllManagers();
+		Admi currentUserAdmi = funtionsAdmi.checkLoginAdmi(document, password, managers);
+
+		if (currentUserAdmi != null) {
+			System.out.println("debrioeod entar");
+			globalState.setCurrentUser(currentUserAdmi);
+		}
+		return currentUserAdmi;
 	}
 //open window
 	void sendToMainView(ActionEvent event, Person currentClient) throws HeadlessException, IOException {
@@ -129,6 +157,20 @@ public class ViewLoginController implements Initializable {
 
 		ViewPrincipalControllerView scene2Controller = loader.getController();
 		scene2Controller.changeLabelButton(currentClient.getUserTyPe());
+
+		// root =
+		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	void sendToRecoverPasswordView(MouseEvent event, Person currentClient) throws HeadlessException, IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/recoverPassword/view/ViewRecoverPassword.fxml"));
+		root = loader.load();
+
+		ViewRecoverPasswordController scene2Controller = loader.getController();
+		
 
 		// root =
 		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));

@@ -44,7 +44,7 @@ public class FuntionsAdmi {
 
 	public void changeStateManager(StateType stateType, String documento, List<Admi> listAdmi) {
 		Admi currentAdmi = getAdmi(documento, listAdmi);
-		currentAdmi.setStateType(stateType);
+		
 	}
 
 }

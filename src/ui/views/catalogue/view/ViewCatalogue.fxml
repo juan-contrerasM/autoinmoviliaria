@@ -27,6 +27,18 @@
                </font>
             </Label>
             <Button fx:id="btnClose" layoutX="458.0" layoutY="28.0" mnemonicParsing="false" onAction="#close" text="close" />
+            <ScrollPane layoutX="8.0" layoutY="87.0" prefHeight="426.0" prefWidth="562.0">
+               <content>
+                  <GridPane fx:id="carGrid" prefHeight="425.0" prefWidth="563.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
          </children>
       </Pane>
    </children>

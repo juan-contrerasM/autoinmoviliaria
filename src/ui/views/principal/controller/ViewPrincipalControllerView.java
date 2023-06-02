@@ -1,6 +1,7 @@
 package ui.views.principal.controller;
 
 import java.awt.HeadlessException;
+import ui.views.register.controller.*;
 import ui.views.registerCustomer.controller.*;
 import java.io.IOException;
 
@@ -100,7 +101,34 @@ public class ViewPrincipalControllerView {
 		}
 		if(nose == UserType.ADMINISTRADOR) {
 			btnRegisterClient.setText("Create employee");
+			btnRegisterClient.setOnAction(e ->{
+				
+				try {
+					sendToCreateRegisterView(e);
+				} catch (HeadlessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			});
+
 		}
+	}
+	void sendToCreateRegisterView(ActionEvent event) throws HeadlessException, IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/register/view/ViewRegistro.fxml"));
+		root = loader.load();
+
+		ViewRegistroController scene2Controller = loader.getController();
+		
+
+		// root =
+		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 	
 	

@@ -12,6 +12,7 @@ module automoviliaria {
 	exports domain.person;
 	exports domain.person.enumm;
 	exports infrastructure.models.person.emp;
+	exports infrastructure.models.person.admi;
 	
 	opens ui.start to javafx.graphics, javafx.fxml;
 	opens ui.views.login.controller;

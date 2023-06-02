@@ -1,11 +1,10 @@
 [{
-	"document": "sadf",
+	"document": "12",
 	"name": "1324",
 	"lastName": "gvbhnjhbgvfc",
 	"birth": "2023-06-13",
-	"password": "dsff",
+	"password": "12",
 	"gmail": "asdfvf",
-	"userTyPe": "EMPLEADO",
-	"stateType": "ACTIVE",
-	"recoverPassword": "METALCARSS"
+	"userTyPe": "ADMINISTRADOR"
+
 }]
