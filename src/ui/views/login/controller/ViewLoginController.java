@@ -102,8 +102,8 @@ public class ViewLoginController implements Initializable {
 			sendToMainView(event, currentUser);
 			return;
 		}
-		//JOptionPane.showMessageDialog(null, "HOLAAAA");
-		System.out.println("credenciales incorrectas");
+		JOptionPane.showMessageDialog(null, "credenciales incorrectas");
+		
 	}
 
 	public Person getFields() {
@@ -122,7 +122,7 @@ public class ViewLoginController implements Initializable {
 		return currentUser;
 
 	}
-
+//open window
 	void sendToMainView(ActionEvent event, Person currentClient) throws HeadlessException, IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
 		root = loader.load();
