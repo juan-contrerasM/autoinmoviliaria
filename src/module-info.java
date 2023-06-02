@@ -13,6 +13,10 @@ module automoviliaria {
 	exports domain.person.enumm;
 	exports infrastructure.models.person.emp;
 	exports infrastructure.models.person.admi;
+	exports infrastructure.models.vehicle;
+	exports infrastructure.models.vehicle.car;
+	exports domain.vehicle;
+	exports domain.vehicle.enums;
 	
 	opens ui.start to javafx.graphics, javafx.fxml;
 	opens ui.views.login.controller;

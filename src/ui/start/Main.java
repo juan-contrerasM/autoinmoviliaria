@@ -7,6 +7,7 @@ import java.util.List;
 
 import infrastructure.database.*;
 import infrastructure.models.person.emp.Emp;
+import infrastructure.models.vehicle.car.Bus;
 import infrastructure.state.GlobalState;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import com.fasterxml.jackson.core.type.TypeReference;
+
+import domain.vehicle.Car;
 
 public class Main extends Application {
 
@@ -67,17 +70,20 @@ public class Main extends Application {
 		globalState = GlobalState.getInstance();
 		List<Emp> employees = new ArrayList<Emp>();
 		List<Admi> managers = new ArrayList<Admi>();
+		List<Bus> cars = new ArrayList<Bus>();
 		try {
 //			employees = database.jsonArrayToList("resources/database/employee.json", Emp.class);
 			employees = database.jsonToObjectList("resources/database/employee.json", new TypeReference<Emp>(){});
 			managers = database.jsonToObjectList("resources/database/manager.json", new TypeReference<Admi>(){});
+			cars = database.jsonToObjectList("resources/database/car.json", new TypeReference<Bus>(){});
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		globalState.setAllEmployees(employees);
 		globalState.setAllManagers(managers);
-		for( Admi m: managers) {
-			System.out.println(m.getDocument());
+		globalState.setAllCars(cars);
+		for( Car m: cars) {
+			System.out.println(m.getModel());
 		}
 	}
 

@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "trademark": "ssdssd",
+    "model": "Este carro ya esta",
+    "changes": 1,
+    "maximumSpeed": 1000,
+    "cylinder": 300,
+    "estadoVehiculo": "NUEVO",
+    "tipoAbs": "SI",
+    "tipocombustible": "GASOLINA",
+    "numPassengers": 5,
+    "numClow": 5,
+    "trunkCapacity": 5,
+    "numberAirbags": 5
+  }
+]

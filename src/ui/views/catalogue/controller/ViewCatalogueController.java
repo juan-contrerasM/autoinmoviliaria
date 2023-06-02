@@ -30,6 +30,7 @@ public class ViewCatalogueController {
     @FXML
     private Pane panelfondo;
 
+    
     @FXML
      void close (ActionEvent event ) {
     	//main.closeWimdow(btnClose);
