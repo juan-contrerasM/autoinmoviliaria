@@ -10,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import infrastructure.models.person.admi.Admi;
@@ -41,10 +43,10 @@ import ui.views.register.controller.ViewRegistroController;
 public class ViewLoginController implements Initializable {
 
 	// Main main = new Main();
-	Automoviliaria automoviliaria = new Automoviliaria();
-	GlobalState globalState = GlobalState.getInstance();
-	FunctionsEmp functionsEmp = new FunctionsEmp();
-	FuntionsAdmi funtionsAdmi= new FuntionsAdmi();
+	//Automoviliaria automoviliaria = new Automoviliaria();
+	private FuntionsAdmi funtionsAdmi= new FuntionsAdmi();
+	private GlobalState globalState = GlobalState.getInstance();
+	private FunctionsEmp functionsEmp = new FunctionsEmp();
 
 	private ObservableList<UserType> listUserType = FXCollections.observableArrayList();
 	private Stage stage;

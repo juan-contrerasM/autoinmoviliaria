@@ -20,17 +20,18 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import ui.start.*;
+import ui.views.catalogue.controller.ViewCatalogueController;
+import ui.views.registerCustomer.controller.ViewRegisterCustomerController;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class ViewPrincipalControllerView {
 	
 	//Main main = new Main();
-	
-	GlobalState globalState = GlobalState.getInstance();
 	private Stage stage;
 	private Parent root;
 	private Scene scene;
+	private GlobalState globalState = GlobalState.getInstance();
 
 	@FXML
 	private ImageView imgLogo;
@@ -72,9 +73,10 @@ public class ViewPrincipalControllerView {
 	}
 
 	@FXML
-	void openWindowCatalogue(ActionEvent event) {
+	void openWindowCatalogue(ActionEvent event) throws HeadlessException, IOException {
 		//main.closeWimdow(btnReport);
 		//main.chargeWindowCatalogue();
+		sendToCatalogueView(event);
 	}
 
 	@FXML
@@ -138,6 +140,21 @@ public class ViewPrincipalControllerView {
 
 		ViewRegisterCustomerController scene2Controller = loader.getController();
 		
+
+		// root =
+		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	void sendToCatalogueView(ActionEvent event) throws HeadlessException, IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/views/catalogue/view/ViewCatalogue.fxml"));
+		root = loader.load();
+
+		ViewCatalogueController scene2Controller = loader.getController();
+		//scene2Controller.changeLabelButton(currentClient.getUserTyPe());
 
 		// root =
 		// FXMLLoader.load(getClass().getResource("/ui/views/principal/view/ViewPrincipal2.fxml"));
